@@ -4,7 +4,6 @@ import { finalize, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon.model';
 import { Trainer } from '../models/trainer.model';
-import { SessionUtil } from '../utils/session.util';
 import { PokemonCatalogueService } from './pokemon-catalogue.service';
 import { UserServiceService } from './user-service.service';
 

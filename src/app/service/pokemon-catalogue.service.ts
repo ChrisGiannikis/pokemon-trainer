@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon.model';
 import { Data } from '../models/data.model';
 import { SessionUtil } from '../utils/session.util';
-const {apiPokemon}= environment;
- 
+//const {apiPokemon}= environment;
+const {apiPokemon}=environment;
 @Injectable({
   providedIn: 'root'
 })

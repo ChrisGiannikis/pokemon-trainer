@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-products",
+            "outputPath": "dist/pokemon-trainer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -31,6 +31,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -43,7 +49,9 @@
                   "maximumError": "4kb"
                 }
               ],
+              
               "outputHashing": "all"
+              
             },
             "development": {
               "buildOptimizer": false,
@@ -74,10 +82,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-products:build:production"
+              "browserTarget": "pokemon-trainer:build:production"
             },
             "development": {
-              "browserTarget": "ng-products:build:development"
+              "browserTarget": "pokemon-trainer:build:development"
+            },
+            "staging": {
+              "browserTarget": "pokemon-trainer:build:staging"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-products:build"
+            "browserTarget": "pokemon-trainer:build"
           }
         },
         "test": {
